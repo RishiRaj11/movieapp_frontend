@@ -1,7 +1,7 @@
 import {GET_MOVIES_SUCCESS,GET_MOVIES_FAIL} from '../constants/movieConstant';
 import axios from 'axios';
 
-const URL = "http://localhost:5000";
+const URL = "https://rishimovieapp-api.onrender.com";
 export const getMovies = () => async (dispatch) => {
     try {
         //console.log("Before")

@@ -11,7 +11,7 @@ const Container = styled(Box)`
   padding: 20px;
 `;
 
-const URL="http://localhost:5000";
+const URL="https://rishimovieapp-api.onrender.com";
 
 const UserDashBoard = () => {
   const [user, setUser] = useState([]);

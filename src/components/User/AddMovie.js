@@ -39,7 +39,7 @@ const AddMovie = () => {
     const [addNewMovie,setAddNewMovie]=useState({});
     const inputHandler = (e) => {
       // console.log(account);
-      setError({ color: "red", visibility: "visible" });
+      setError({ color: "red", visibility: "hidden" });
         setAddNewMovie({...addNewMovie,[e.target.name]:e.target.value});
         
     };
@@ -51,7 +51,10 @@ const AddMovie = () => {
        try{
         const response = await axios.post(`${URL}/user/addmovie`,newRecord);
         console.log(response.data.status);
-        console.log(newRecord);
+        if(response===409){
+          setError({ color: "red", visibility: "visible" });
+        }
+        //console.log(newRecord);
        }catch(error){
         console.log("error",error);
        }

@@ -19,9 +19,9 @@ const Text = styled(Typography)`
 `;
 const SubContainer = styled(Box)``;
 
-//const URL="https://rishimovieapp-api.onrender.com";
+const URL="https://rishimovieapp-api.onrender.com";
 
-const URL="http://localhost:5000" ;
+//const URL="http://localhost:5000" ;
 
 const UserMovieCard = ({ item, setUpdateToggle, setUpdate }) => {
   const { _id } = item;

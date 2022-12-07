@@ -32,8 +32,8 @@ const Input = styled("input")({
   fontSize: "medium",
 });
 
-//const URL="https://rishimovieapp-api.onrender.com";
-const URL="http://localhost:5000" ;
+const URL="https://rishimovieapp-api.onrender.com";
+//const URL="http://localhost:5000" ;
 
 const Login = (props) => {
   const navigate = useNavigate();

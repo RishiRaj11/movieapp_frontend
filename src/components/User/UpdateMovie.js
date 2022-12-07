@@ -30,7 +30,9 @@ const Input = styled("input")({
   width: "80%",
 });
 
-const URL="https://rishimovieapp-api.onrender.com"
+//const URL="https://rishimovieapp-api.onrender.com";
+
+const URL="http://localhost:5000" ;
 
 const UpdateMovie = ({ update, setToggle }) => {
   const [addNewMovie, setAddNewMovie] = useState({});

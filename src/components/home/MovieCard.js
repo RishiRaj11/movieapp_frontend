@@ -34,8 +34,14 @@ const MovieCard = ({ item }) => {
           <Text style={{ color: "green" }}>
             Release Date:{item.releaseDate}
           </Text>
+          <Text style={{ color: "green" }}>
+          Genres: {item.genres[0]}
+          </Text>
+          <Text style={{ color: "green" }}>
+            IMDB Rating: {item.imdbRating}
+          </Text>
           <Text style={{ color: "#212121", opacity: ".6" }}>
-            IMDB Rating {item.imdbRating}
+            Year: {item.year}
           </Text>
         </SubContainer>
       </Box>

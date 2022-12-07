@@ -31,7 +31,8 @@ const Input = styled("input")({
 });
 
 
-const URL="https://rishimovieapp-api.onrender.com"
+//const URL="https://rishimovieapp-api.onrender.com";
+const URL="http://localhost:5000" ;
 
 const AddMovie = () => {
     const [error, setError] = useState({ color: "red", visibility: "hidden" });

@@ -158,7 +158,7 @@ const AddMovie = () => {
        <lable>Average Rating</lable>
           <DivBox>
             <Input
-              type="text"
+              type="number"
               placeholder="Average Rating"
               name="averageRating"
               onChange={inputHandler}
@@ -202,7 +202,7 @@ const AddMovie = () => {
        <lable>IMDB Rating</lable>
           <DivBox>
             <Input
-              type="text"
+              type="number"
               placeholder="Enter IMDB Rating"
               name="imbdbRating"
               onChange={inputHandler}

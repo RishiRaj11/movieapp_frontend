@@ -5,10 +5,10 @@ const Container=styled(Box)`
 margin-top:75px;
 `; 
 
-const Home = () => {
+const Home = ({searchInput}) => {
   return (
     <Container>
-        <MoviesList  />
+        <MoviesList searchInput={searchInput} />
     </Container>
   )
 }

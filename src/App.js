@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import Header from "./components/header/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AdminLogin from "./components/Admin/AdminLogin";
@@ -8,10 +8,9 @@ import { DataContext } from "./components/context/DataProvider";
 
 const App = () => {
   const { account } = useContext(DataContext);
-  let searchInput = "";
-  const searchFunction = (value) => {
-    searchInput = value;
-  };
+  const [searchInput,searchFunction]=useState("");
+  
+
   return (
     <>
       <Router>
@@ -20,13 +19,13 @@ const App = () => {
           {account.email && account.userType === "Admin" ? (
             <Route path="/admin/login" element={<AdminLogin />} exact />
           ) : (
-            <Route path="/" element={<Home />} exact />
+            <Route path="/" element={<Home searchInput={searchInput} />} exact />
           )}
 
           {account.email && account.userType === "User" ? (
             <Route path="/user/login" element={<UserLogin />} exact />
           ) : (
-            <Route path="/" element={<Home />} exact />
+            <Route path="/" element={<Home searchInput={searchInput} />} exact />
           )}
         </Routes>
       </Router>

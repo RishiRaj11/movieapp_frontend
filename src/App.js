@@ -9,8 +9,6 @@ import { DataContext } from "./components/context/DataProvider";
 const App = () => {
   const { account } = useContext(DataContext);
   const [searchInput,searchFunction]=useState("");
-  
-
   return (
     <>
       <Router>
@@ -21,7 +19,6 @@ const App = () => {
           ) : (
             <Route path="/" element={<Home searchInput={searchInput} />} exact />
           )}
-
           {account.email && account.userType === "User" ? (
             <Route path="/user/login" element={<UserLogin />} exact />
           ) : (

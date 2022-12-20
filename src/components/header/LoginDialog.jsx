@@ -15,8 +15,7 @@ const LoginDialog = ({open,setOpen}) => {
     <Dialog  open={open} onClose={closeDialog} >
       <Card variant="outlined"  style={{backgroundColor:" rgb(29, 69, 107)"}}>
         {(loginSignup ? (<Login setOpen={setOpen} setLoginSignup={setLoginSignup} />):(<SignUp setOpen={setOpen} setLoginSignup={setLoginSignup} />))}
-      
-      
+           
       </Card>
       
     </Dialog>

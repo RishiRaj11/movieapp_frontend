@@ -17,16 +17,16 @@ const MoviesList = ({ searchInput }) => {
   const [sort, setSort] = React.useState("");
   const [genres, setGenres] = React.useState("");
   const { movies } = useSelector((state) => state.getAllMovies); // this getProducts comming from redux store
-  const searchedMovies = movies.filter((item) => {
-    return item.title === searchInput;
-  });
+  // const searchedMovies = movies.filter((item) => {
+  //   return item.title === searchInput;
+  // });
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getMovies());
   }, [dispatch]);
-  console.log(sort, genres);
-  console.log(searchInput);
+  //console.log(sort, genres);
+  //console.log(searchInput);
   return (
     <>
       <Box style={{ display: "flex", justifyContent: "space-around" }}>
@@ -45,19 +45,20 @@ const MoviesList = ({ searchInput }) => {
       <Container>
         {sort.length === 0 && genres.length === 0 ? (
           <>
-            {searchedMovies.length === 0 ? (
-              <>
-                {movies.map((item) => (
-                  <MovieCard item={item} key={item._id} />
-                ))}
-              </>
-            ) : (
-              <>
-                {searchedMovies.map((item) => (
-                  <MovieCard item={item} key={item._id} />
-                ))}
-              </>
-            )}
+            {movies
+              .filter((val) => {
+                if (searchInput === "") {
+                  return val;
+                } else if (
+                  val.title.toLowerCase().includes(searchInput.toLowerCase())
+                ) {
+                  return val;
+                }
+              })
+
+              .map((item) => (
+                <MovieCard item={item} key={item._id} />
+              ))}
           </>
         ) : (
           <Filter sort={sort} genres={genres} movies={movies} />
